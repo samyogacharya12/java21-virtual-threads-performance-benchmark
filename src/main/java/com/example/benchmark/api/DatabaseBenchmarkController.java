@@ -22,7 +22,7 @@ public class DatabaseBenchmarkController {
 
     @GetMapping("/database-load")
     public Map<String, Object> databaseLoad(
-            @RequestParam(defaultValue = "100") int delayMs) {
+            @RequestParam int delayMs) {
 
         if (delayMs < 0 || delayMs > 5000) {
             throw new IllegalArgumentException(
